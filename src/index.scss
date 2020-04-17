@@ -1,0 +1,24 @@
+$color: #fff;
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    // 避免控制台出现触摸时报错信息
+    touch-action: none;
+}
+
+html,
+body,
+#root,
+.app {
+    height: 100%;
+}
+
+body {
+    font-family: 'Microsoft YaHei', '宋体', Tahoma, Arial, sans-serif;
+    color: #333;
+    background-color: $color;
+    font-size: 14px;
+}

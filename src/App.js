@@ -1,9 +1,26 @@
 import React from 'react'
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
+import Home from './pages/Home'
+import City from './pages/City'
+import Map from './pages/Map'
+import NoMatch from './pages/NoMatch'
 
 class App extends React.Component {
-    render() {
-        return <div className = "app" > 我是app组件 < /div>
-
-    }
+  render() {
+    return (
+      <Router>
+        <div className="app">
+          {/* 路由配置 */}
+          <Switch>
+            <Redirect exact from="/" to="/home"></Redirect>
+            <Route path="/home" component={Home}></Route>
+            <Route path="/city" component={City}></Route>
+            <Route path="/map" component={Map}></Route>
+            <Route component={NoMatch}></Route>
+          </Switch>
+        </div>
+      </Router>
+    )
+  }
 }
 export default App
